@@ -15,7 +15,7 @@ trait MyList[+T] {
   // def prepend(elem: T): List[T] = new Cons(elem, this)
 
   // 应该如何实现?
-//  def prepend[U >: T](elem: U): MyList[U] = new Cons(elem, this)
+
 }
 
 class Cons[+T](val head: T, val tail: MyList[T]) extends MyList[T] {
@@ -32,9 +32,27 @@ object MyNil extends MyList[Nothing] {
 object VarianceApp extends App {
   val x: MyList[Cat] = MyNil
   val y = new Cons(new Animal(), x)
+
   println(y.head)
 
 //  val z = x.prepend(new Dog())
 
 
 }
+
+
+/** 逆变
+  * def f(a: Animal): Apple
+  * def g(a: Cat): Fruit
+  *
+  * cat = new Cat
+  * val r: Fruit = g(cat)
+  *
+  * a = new Animal
+  * val r: Apple = f(a)
+  *
+  * 所以，函数定义是
+  * trait Function1[-T, +U] {
+  *     def apply(x: T): U
+  * }
+  */

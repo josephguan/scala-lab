@@ -25,7 +25,7 @@ trait WheelComponent {
   val wheel: DIYWheel
 }
 
-// 具体实现
+// 元件的具体实现
 class V6Engine extends DIYEngine {
   def start(): Unit = println("V6 Engine Start.")
 }

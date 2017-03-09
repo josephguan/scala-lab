@@ -37,17 +37,7 @@ class Dog extends Animal
 //}
 
 
-/**
-  * Variance Checks
-  * 1. 协变：只能出现在方法的返回值上
-  * 2. 逆变：只能出现在方法的参数上
-  * 3. 不变：可以出现在任何地方
-  *
-  * 所以，函数定义是
-  * trait Function1[-T, +U] {
-  *     def apply(x: T): U
-  * }
-  */
+
 object CovarianceApp extends App {
 
 }
