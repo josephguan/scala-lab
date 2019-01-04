@@ -57,16 +57,29 @@ object Builds extends Build {
   //----------------------------
   // trainings
   //----------------------------
-  lazy val `scratch` = project.in(file("trainings/getting-started")).settings(name := "getting-started").
-    settings(Common.settings: _*).
-    settings(libraryDependencies ++= Dependencies.test)
-  modules += `scratch`
-
   lazy val `type-system` = project.in(file("trainings/type-system")).settings(name := "type-system").
     settings(Common.settings: _*).
     settings(libraryDependencies ++= Dependencies.test)
   modules += `type-system`
+
+
+  //----------------------------
+  // experiments
+  //----------------------------
+  lazy val `performance` = project.in(file("experiments/performance")).settings(name := "performance").
+    settings(Common.settings: _*).
+    settings(libraryDependencies ++= Dependencies.test)
+  modules += `performance`
+
+  lazy val `feature` = project.in(file("experiments/feature")).settings(name := "feature").
+    settings(Common.settings: _*).
+    settings(libraryDependencies ++= Dependencies.test)
+  modules += `feature`
   
+  lazy val `sql4hbase` = project.in(file("experiments/sql4hbase")).settings(name := "sql4hbase").
+    settings(Common.settings: _*).
+    settings(libraryDependencies ++= Dependencies.test)
+  modules += `sql4hbase`
   
   //----------------------------------------
   // all in one
