@@ -80,6 +80,11 @@ object Builds extends Build {
     settings(Common.settings: _*).
     settings(libraryDependencies ++= Dependencies.test)
   modules += `sql4hbase`
+
+  lazy val `snippet` = project.in(file("experiments/snippet")).settings(name := "snippet").
+    settings(Common.settings: _*).
+    settings(libraryDependencies ++= Dependencies.test)
+  modules += `snippet`
   
   //----------------------------------------
   // all in one
